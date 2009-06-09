@@ -1,3 +1,3 @@
 (function () {
-    alert("Testing 123");
+    alert('Testing 123');
 })();
