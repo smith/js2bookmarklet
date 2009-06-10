@@ -4,4 +4,5 @@ README.rdoc
 Rakefile
 bin/js2bookmarklet
 lib/js2bookmarklet.rb
+pkg/js2bookmarklet-0.0.1.gem
 test/test_js2bookmarklet.rb
