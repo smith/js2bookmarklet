@@ -1,3 +1,4 @@
+require 'rubygems'
 begin
   require 'jsmin'
 rescue LoadError => e

@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+begin
+  require 'js2bookmarklet'
+rescue LoadError => e
+  puts "The js2bookmarklet gem is required"
+  exit
+end
+
+options = {}
+input_file = ARGV.last
+output_file = nil
+OptionParser.new do |opts|
+  opts.banner = "Usage: js2bookmarklet [options] [input file]"    
+  opts.on("-o [file name]", "--output [file name]", "Output file") do |o|
+    output_file = o
+  end
+  opts.on("-a [text]", "--link-text [text]", "Link text") do |t|
+    options["text"] = t
+  end
+  opts.on("-t [title]", "--link-title [title]", "Link title") do |t|
+    options["title"] = t
+  end
+end.parse!
+
+if File.exists?(input_file.to_s)
+  input = open(input_file).read
+  output = Js2bookmarklet.new(input, options).to_bookmarklet
+  if output_file
+    open(output_file, "w").write(output)
+  else
+    puts output
+  end
+else
+  puts "Error: Input file does not exist"
+  exit 1
+end
