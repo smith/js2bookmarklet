@@ -7,7 +7,7 @@ rescue LoadError => e
 end
 
 class Js2bookmarklet
-  VERSION = '0.0.1'
+  VERSION = '0.0.2'
   LINK_TEXT = "Drag me to your bookmarks"
 
   def initialize(input = "", options = {})

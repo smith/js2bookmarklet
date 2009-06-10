@@ -1,16 +1,17 @@
 = js2bookmarklet
 
-* http://github.com/smith/js2bookmarklet
+http://github.com/smith/js2bookmarklet
 
 == DESCRIPTION:
 
 Utility to create a bookmarklet from a JavaScript file
 
-== FEATURES/PROBLEMS:
-
 == SYNOPSIS:
 
-js2bookmarklet myscript.js
+js2bookmarklet [options] [input file]
+    -o, --output [file name]         Output file
+    -a, --link-text [text]           Link text
+    -t, --link-title [title]         Link title
 
 == REQUIREMENTS:
 
@@ -18,7 +19,7 @@ js2bookmarklet myscript.js
 
 == INSTALL:
 
-sudo gem install js2bookmarklet
+gem install smith-js2bookmarklet (make sure GitHub is included in your sources with gem sources -a http://gems.github.com)
 
 == LICENSE:
 
