@@ -2,3 +2,7 @@
 
 * 1 major enhancement:
   * Initial release
+
+== 0.0.2 2009-06-10
+
+* Basic functionality complete. See README.rdoc.
