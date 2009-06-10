@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = ["nlloyds@gmail.com"]
   s.executables = ["js2bookmarklet"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.rdoc"]
-  s.files = ["History.txt", "Manifest.txt", "README.rdoc", "Rakefile", "bin/js2bookmarklet", "lib/js2bookmarklet.rb", "pkg/js2bookmarklet-0.0.1.gem", "test/test_js2bookmarklet.rb"]
+  s.files = ["History.txt", "Manifest.txt", "README.rdoc", "Rakefile", "js2bookmarklet.gemspec", "bin/js2bookmarklet", "lib/js2bookmarklet.rb", "test/test_js2bookmarklet.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/smith/js2bookmarklet}
   s.rdoc_options = ["--main", "README.rdoc"]
