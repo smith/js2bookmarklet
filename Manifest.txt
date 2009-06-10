@@ -2,6 +2,7 @@ History.txt
 Manifest.txt
 README.rdoc
 Rakefile
+js2bookmarklet.gemspec
 bin/js2bookmarklet
 lib/js2bookmarklet.rb
 pkg/js2bookmarklet-0.0.1.gem
