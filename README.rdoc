@@ -19,7 +19,7 @@ js2bookmarklet [options] [input file]
 
 == INSTALL:
 
-gem install smith-js2bookmarklet (make sure GitHub is included in your sources with gem sources -a http://gems.github.com)
+gem install js2bookmarklet (make sure Gemcutter is included in your sources with `gem tumble`)
 
 == LICENSE:
 
