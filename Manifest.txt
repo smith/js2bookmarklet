@@ -1,8 +1,0 @@
-History.txt
-Manifest.txt
-README.rdoc
-Rakefile
-js2bookmarklet.gemspec
-bin/js2bookmarklet
-lib/js2bookmarklet.rb
-test/test_js2bookmarklet.rb

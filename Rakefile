@@ -1,28 +1,24 @@
-require 'rubygems' unless ENV['NO_RUBYGEMS']
-%w[rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/js2bookmarklet'
+require "rake/testtask"
 
-# Generate all the Rake tasks
-# Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('js2bookmarklet', Js2bookmarklet::VERSION) do |p|
-  p.developer('Nathan L Smith', 'nlloyds@gmail.com')
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.rubyforge_name       = p.name # TODO this is default value
-  p.extra_deps         = [
-    ['jsmin']
-  ]
-  p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"]
-  ]
-  
-  p.clean_globs |= %w[**/.DS_Store tmp *.log]
-  path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
-  p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
-  p.rsync_args = '-av --delete --ignore-errors'
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "js2bookmarklet"
+    gemspec.description = "Utility to create a bookmarklet from a JavaScript file"
+    gemspec.summary = ""
+    gemspec.email = "nlloyds@gmail.com"
+    gemspec.homepage = "http://github.com/smith/js2bookmarklet/"
+    gemspec.authors = ["Nathan L Smith"]
+    gemspec.add_dependency("jsmin")
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install jeweler"
 end
 
-require 'newgem/tasks' # load /tasks/*.rake
-Dir['tasks/**/*.rake'].each { |t| load t }
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList["test/test*.rb"]
+  t.verbose = true
+end
 
-# TODO - want other tests/tasks run by default? Add them to the list
-# task :default => [:spec, :features]
+task :default => [:test]

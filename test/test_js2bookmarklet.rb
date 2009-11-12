@@ -1,4 +1,5 @@
 require File.dirname(__FILE__) + '/../lib/js2bookmarklet'
+require "test/unit"
 
 class TestJs2bookmarklet < Test::Unit::TestCase
   def setup
