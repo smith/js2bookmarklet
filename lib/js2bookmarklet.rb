@@ -19,6 +19,7 @@ class Js2bookmarklet
     minify
     escape
     wrap
+    add_link unless @options["link"].nil?
     @out
   end
 

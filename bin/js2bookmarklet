@@ -18,6 +18,9 @@ OptionParser.new do |opts|
   opts.on("-o [file name]", "--output [file name]", "Output file") do |o|
     output_file = o
   end
+  opts.on("-l", "--link", "Add link around bookmarklet") do |o|
+    options["link"] = true
+  end
   opts.on("-a [text]", "--link-text [text]", "Link text") do |t|
     options["text"] = t
   end
