@@ -18,7 +18,7 @@ class Js2bookmarklet
   def to_bookmarklet
     minify
     escape
-    add_link
+    wrap
     @out
   end
 
@@ -31,7 +31,11 @@ class Js2bookmarklet
       title = @options["title"] ? " title=\"#{@options["title"]}\"" : ""
       text = @options["text"] ? @options["text"] : LINK_TEXT
 
-      @out = "<a href='javascript:#{@out}'#{title}>#{text}</a>"
+      @out = "<a href='#{@out}'#{title}>#{text}</a>"
+    end
+
+    def wrap
+      @out = "javascript:(function()%7B#{@out}%7D)()"
     end
 
     # Taken from rails escape_javascript
